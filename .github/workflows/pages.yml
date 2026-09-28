@@ -1,0 +1,93 @@
+name: Publish Datsu archive
+
+on:
+  push:
+    branches:
+      - main
+  release:
+    types:
+      - published
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: true
+
+jobs:
+  check-comic-release:
+    if: github.event_name != 'release' || github.event.release.tag_name == 'hq-torneio-v1'
+    runs-on: ubuntu-latest
+    outputs:
+      available: ${{ steps.release.outputs.available }}
+    steps:
+      - name: Check comic media release
+        id: release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view hq-torneio-v1 --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "available=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "available=false" >> "$GITHUB_OUTPUT"
+            echo "::notice title=Release ausente::A publicação aguarda a release hq-torneio-v1."
+          fi
+
+  build:
+    needs: check-comic-release
+    if: needs.check-comic-release.outputs.available == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - name: Install dependencies
+        run: npm ci
+      - name: Download comic media from GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          COMIC_MEDIA_TAG: hq-torneio-v1
+        run: |
+          media_dir="$RUNNER_TEMP/datsu-comic-media"
+          comic_dir="public/content/comics/torneio-infernal-aurora-vs-drekalia-1"
+          mkdir -p "$media_dir" "$comic_dir/audio"
+          gh release download "$COMIC_MEDIA_TAG" --repo "$GITHUB_REPOSITORY" --dir "$media_dir"
+          cp "$media_dir/HQ - Torneio Infernal - Aurora vs Drekalia V. 1.pdf" "$comic_dir/comic.pdf"
+          cp "$media_dir/Capa.png" "$comic_dir/cover.png"
+          cp "$media_dir/Isaac.mp3" "$comic_dir/audio/isaac.mp3"
+          cp "$media_dir/Torneio.mp3" "$comic_dir/audio/torneio.mp3"
+          cp "$media_dir/Kurogane.mp3" "$comic_dir/audio/kurogane.mp3"
+          cp "$media_dir/Drekai 1.mp3" "$comic_dir/audio/drekai-1.mp3"
+          cp "$media_dir/Drekai 2.mp3" "$comic_dir/audio/drekai-2.mp3"
+          cp "$media_dir/Men'khir.mp3" "$comic_dir/audio/menkhir.mp3"
+      - name: Run tests
+        run: npm test
+      - name: Run lint
+        run: npm run lint
+      - name: Build static site
+        run: npm run build
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Upload site artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy Pages artifact
+        id: deployment
+        uses: actions/deploy-pages@v4

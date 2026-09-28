@@ -1,0 +1,62 @@
+{
+  "comics": [
+    {
+      "id": "torneio-infernal-aurora-vs-drekalia-1",
+      "title": "Torneio Infernal: Aurora vs Drekalia",
+      "subtitle": "Volume 1",
+      "description": "HQ de 73 páginas do RPG Datsu.",
+      "author": "Datsu",
+      "pageCount": 73,
+      "pdf": "content/comics/torneio-infernal-aurora-vs-drekalia-1/comic.pdf",
+      "cover": "content/comics/torneio-infernal-aurora-vs-drekalia-1/cover.png",
+      "tracks": [
+        {
+          "id": "isaac",
+          "title": "Isaac",
+          "src": "content/comics/torneio-infernal-aurora-vs-drekalia-1/audio/isaac.mp3"
+        },
+        {
+          "id": "torneio",
+          "title": "Torneio",
+          "src": "content/comics/torneio-infernal-aurora-vs-drekalia-1/audio/torneio.mp3"
+        },
+        {
+          "id": "kurogane",
+          "title": "Kurogane",
+          "src": "content/comics/torneio-infernal-aurora-vs-drekalia-1/audio/kurogane.mp3"
+        },
+        {
+          "id": "drekai-1",
+          "title": "Drekai 1",
+          "src": "content/comics/torneio-infernal-aurora-vs-drekalia-1/audio/drekai-1.mp3"
+        },
+        {
+          "id": "drekai-2",
+          "title": "Drekai 2",
+          "src": "content/comics/torneio-infernal-aurora-vs-drekalia-1/audio/drekai-2.mp3"
+        },
+        {
+          "id": "menkhir",
+          "title": "Men'khir",
+          "src": "content/comics/torneio-infernal-aurora-vs-drekalia-1/audio/menkhir.mp3"
+        }
+      ],
+      "cues": [
+        { "page": 2, "trackId": "torneio", "action": "start", "fadeMs": 2000 },
+        { "page": 7, "trackId": "isaac", "action": "start", "fadeMs": 2000 },
+        { "page": 13, "trackId": "torneio", "action": "stop", "fadeMs": 2000 },
+        { "page": 14, "trackId": "isaac", "action": "stop", "fadeMs": 2000 },
+        { "page": 14, "trackId": "torneio", "action": "start", "fadeMs": 2000 },
+        { "page": 27, "trackId": "torneio", "action": "stop", "fadeMs": 2000 },
+        { "page": 28, "trackId": "drekai-1", "action": "start", "fadeMs": 2000 },
+        { "page": 36, "trackId": "drekai-1", "action": "stop", "fadeMs": 2000 },
+        { "page": 37, "trackId": "kurogane", "action": "start", "fadeMs": 2000 },
+        { "page": 41, "trackId": "kurogane", "action": "stop", "fadeMs": 2000 },
+        { "page": 42, "trackId": "drekai-2", "action": "start", "fadeMs": 2000 },
+        { "page": 53, "trackId": "drekai-2", "action": "stop", "fadeMs": 2000 },
+        { "page": 54, "trackId": "menkhir", "action": "start", "fadeMs": 2000 },
+        { "page": 70, "trackId": "menkhir", "action": "stop", "fadeMs": 2000 }
+      ]
+    }
+  ]
+}
