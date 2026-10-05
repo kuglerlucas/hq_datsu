@@ -79,7 +79,7 @@ gh release create hq-torneio-v1 `
 Pop-Location
 ```
 
-Para o volume 2, use nomes simples nos assets da Release para manter os caminhos previsíveis no workflow:
+Ao criar a Release do volume 2, o GitHub normaliza espaços e acentos nos nomes dos assets; o workflow usa esses nomes normalizados ao montar os caminhos públicos:
 
 ```powershell
 Push-Location ".\HQ Torneio Infernal - Aurora vs Drekalia 2"
@@ -88,15 +88,15 @@ gh release create hq-torneio-v2 `
 	--target main `
 	--title "Torneio Infernal: Aurora vs Drekalia - Volume 2" `
 	--notes "PDF e trilhas do volume 2 usados pelo acervo Datsu." `
-	"HQ - Torneio Infernal - Aurora vs Drekalia V. 2.pdf#volume2-comic.pdf" `
-	"Sociedade.mp3#sociedade.mp3" `
-	"Suspense 1.mp3#suspense-1.mp3" `
-	"Suspense 2.mp3#suspense-2.mp3" `
-	"Exploração 1.mp3#exploracao-1.mp3" `
-	"Combate 1.mp3#combate-1.mp3" `
-	"Heroismo.mp3#heroismo.mp3" `
-	"Coração.mp3#coracao.mp3" `
-	"Combate 2.mp3#combate-2.mp3"
+	"HQ - Torneio Infernal - Aurora vs Drekalia V. 2.pdf" `
+	"Sociedade.mp3" `
+	"Suspense 1.mp3" `
+	"Suspense 2.mp3" `
+	"Exploração 1.mp3" `
+	"Combate 1.mp3" `
+	"Heroismo.mp3" `
+	"Coração.mp3" `
+	"Combate 2.mp3"
 Pop-Location
 ```
 

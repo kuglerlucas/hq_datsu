@@ -75,15 +75,15 @@ jobs:
 
           volume2="public/content/comics/torneio-infernal-aurora-vs-drekalia-2"
           mkdir -p "$volume2/audio"
-          cp "$media_root/v2/volume2-comic.pdf" "$volume2/comic.pdf"
-          cp "$media_root/v2/sociedade.mp3" "$volume2/audio/sociedade.mp3"
-          cp "$media_root/v2/suspense-1.mp3" "$volume2/audio/suspense-1.mp3"
-          cp "$media_root/v2/suspense-2.mp3" "$volume2/audio/suspense-2.mp3"
-          cp "$media_root/v2/exploracao-1.mp3" "$volume2/audio/exploracao-1.mp3"
-          cp "$media_root/v2/combate-1.mp3" "$volume2/audio/combate-1.mp3"
-          cp "$media_root/v2/heroismo.mp3" "$volume2/audio/heroismo.mp3"
-          cp "$media_root/v2/coracao.mp3" "$volume2/audio/coracao.mp3"
-          cp "$media_root/v2/combate-2.mp3" "$volume2/audio/combate-2.mp3"
+          cp "$media_root/v2/HQ.-.Torneio.Infernal.-.Aurora.vs.Drekalia.V.2.pdf" "$volume2/comic.pdf"
+          cp "$media_root/v2/Sociedade.mp3" "$volume2/audio/sociedade.mp3"
+          cp "$media_root/v2/Suspense.1.mp3" "$volume2/audio/suspense-1.mp3"
+          cp "$media_root/v2/Suspense.2.mp3" "$volume2/audio/suspense-2.mp3"
+          cp "$media_root/v2/Exploracao.1.mp3" "$volume2/audio/exploracao-1.mp3"
+          cp "$media_root/v2/Combate.1.mp3" "$volume2/audio/combate-1.mp3"
+          cp "$media_root/v2/Heroismo.mp3" "$volume2/audio/heroismo.mp3"
+          cp "$media_root/v2/Coracao.mp3" "$volume2/audio/coracao.mp3"
+          cp "$media_root/v2/Combate.2.mp3" "$volume2/audio/combate-2.mp3"
       - name: Run tests
         run: npm test
       - name: Run lint
