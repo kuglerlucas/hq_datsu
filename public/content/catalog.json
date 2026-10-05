@@ -57,6 +57,77 @@
         { "page": 54, "trackId": "menkhir", "action": "start", "fadeMs": 2000 },
         { "page": 70, "trackId": "menkhir", "action": "stop", "fadeMs": 2000 }
       ]
+    },
+    {
+      "id": "torneio-infernal-aurora-vs-drekalia-2",
+      "title": "Torneio Infernal: Aurora vs Drekalia",
+      "subtitle": "Volume 2",
+      "description": "HQ de 76 páginas do RPG Datsu.",
+      "author": "Datsu",
+      "pageCount": 76,
+      "pdf": "content/comics/torneio-infernal-aurora-vs-drekalia-2/comic.pdf",
+      "tracks": [
+        {
+          "id": "sociedade",
+          "title": "Sociedade",
+          "src": "content/comics/torneio-infernal-aurora-vs-drekalia-2/audio/sociedade.mp3"
+        },
+        {
+          "id": "suspense-1",
+          "title": "Suspense 1",
+          "src": "content/comics/torneio-infernal-aurora-vs-drekalia-2/audio/suspense-1.mp3"
+        },
+        {
+          "id": "suspense-2",
+          "title": "Suspense 2",
+          "src": "content/comics/torneio-infernal-aurora-vs-drekalia-2/audio/suspense-2.mp3"
+        },
+        {
+          "id": "exploracao-1",
+          "title": "Exploração 1",
+          "src": "content/comics/torneio-infernal-aurora-vs-drekalia-2/audio/exploracao-1.mp3"
+        },
+        {
+          "id": "combate-1",
+          "title": "Combate 1",
+          "src": "content/comics/torneio-infernal-aurora-vs-drekalia-2/audio/combate-1.mp3"
+        },
+        {
+          "id": "heroismo",
+          "title": "Heroísmo",
+          "src": "content/comics/torneio-infernal-aurora-vs-drekalia-2/audio/heroismo.mp3"
+        },
+        {
+          "id": "coracao",
+          "title": "Coração",
+          "src": "content/comics/torneio-infernal-aurora-vs-drekalia-2/audio/coracao.mp3"
+        },
+        {
+          "id": "combate-2",
+          "title": "Combate 2",
+          "src": "content/comics/torneio-infernal-aurora-vs-drekalia-2/audio/combate-2.mp3"
+        }
+      ],
+      "cues": [
+        { "page": 2, "trackId": "sociedade", "action": "start", "fadeMs": 0 },
+        { "page": 9, "trackId": "sociedade", "action": "stop", "fadeMs": 0 },
+        { "page": 10, "trackId": "suspense-1", "action": "start", "fadeMs": 0 },
+        { "page": 12, "trackId": "suspense-1", "action": "stop", "fadeMs": 0 },
+        { "page": 13, "trackId": "suspense-2", "action": "start", "fadeMs": 0 },
+        { "page": 17, "trackId": "suspense-2", "action": "stop", "fadeMs": 0 },
+        { "page": 18, "trackId": "exploracao-1", "action": "start", "fadeMs": 0 },
+        { "page": 25, "trackId": "exploracao-1", "action": "stop", "fadeMs": 0 },
+        { "page": 26, "trackId": "combate-1", "action": "start", "fadeMs": 0 },
+        { "page": 29, "trackId": "combate-1", "action": "stop", "fadeMs": 0 },
+        { "page": 30, "trackId": "heroismo", "action": "start", "fadeMs": 0 },
+        { "page": 34, "trackId": "heroismo", "action": "stop", "fadeMs": 0 },
+        { "page": 35, "trackId": "exploracao-1", "action": "start", "fadeMs": 0 },
+        { "page": 48, "trackId": "exploracao-1", "action": "stop", "fadeMs": 0 },
+        { "page": 49, "trackId": "coracao", "action": "start", "fadeMs": 0 },
+        { "page": 60, "trackId": "coracao", "action": "stop", "fadeMs": 0 },
+        { "page": 61, "trackId": "combate-2", "action": "start", "fadeMs": 0 },
+        { "page": 71, "trackId": "combate-2", "action": "stop", "fadeMs": 0 }
+      ]
     }
   ]
 }
