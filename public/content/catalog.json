@@ -110,23 +110,23 @@
       ],
       "cues": [
         { "page": 2, "trackId": "sociedade", "action": "start", "fadeMs": 0 },
-        { "page": 9, "trackId": "sociedade", "action": "stop", "fadeMs": 0 },
+        { "page": 10, "trackId": "sociedade", "action": "stop", "fadeMs": 0 },
         { "page": 10, "trackId": "suspense-1", "action": "start", "fadeMs": 0 },
-        { "page": 12, "trackId": "suspense-1", "action": "stop", "fadeMs": 0 },
+        { "page": 13, "trackId": "suspense-1", "action": "stop", "fadeMs": 0 },
         { "page": 13, "trackId": "suspense-2", "action": "start", "fadeMs": 0 },
-        { "page": 17, "trackId": "suspense-2", "action": "stop", "fadeMs": 0 },
+        { "page": 18, "trackId": "suspense-2", "action": "stop", "fadeMs": 0 },
         { "page": 18, "trackId": "exploracao-1", "action": "start", "fadeMs": 0 },
-        { "page": 25, "trackId": "exploracao-1", "action": "stop", "fadeMs": 0 },
+        { "page": 26, "trackId": "exploracao-1", "action": "stop", "fadeMs": 0 },
         { "page": 26, "trackId": "combate-1", "action": "start", "fadeMs": 0 },
-        { "page": 29, "trackId": "combate-1", "action": "stop", "fadeMs": 0 },
+        { "page": 30, "trackId": "combate-1", "action": "stop", "fadeMs": 0 },
         { "page": 30, "trackId": "heroismo", "action": "start", "fadeMs": 0 },
-        { "page": 34, "trackId": "heroismo", "action": "stop", "fadeMs": 0 },
+        { "page": 35, "trackId": "heroismo", "action": "stop", "fadeMs": 0 },
         { "page": 35, "trackId": "exploracao-1", "action": "start", "fadeMs": 0 },
-        { "page": 48, "trackId": "exploracao-1", "action": "stop", "fadeMs": 0 },
+        { "page": 49, "trackId": "exploracao-1", "action": "stop", "fadeMs": 0 },
         { "page": 49, "trackId": "coracao", "action": "start", "fadeMs": 0 },
-        { "page": 60, "trackId": "coracao", "action": "stop", "fadeMs": 0 },
+        { "page": 61, "trackId": "coracao", "action": "stop", "fadeMs": 0 },
         { "page": 61, "trackId": "combate-2", "action": "start", "fadeMs": 0 },
-        { "page": 71, "trackId": "combate-2", "action": "stop", "fadeMs": 0 }
+        { "page": 72, "trackId": "combate-2", "action": "stop", "fadeMs": 0 }
       ]
     }
   ]

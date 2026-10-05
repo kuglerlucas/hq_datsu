@@ -55,28 +55,26 @@ describe('parseComicCatalog', () => {
     ])
     expect(volumeTwo?.cues.every((cue) => cue.fadeMs === 0)).toBe(true)
 
-    const expectedTrackByPage = new Map<number, string>([
-      [2, 'sociedade'],
-      [8, 'sociedade'],
-      [10, 'suspense-1'],
-      [13, 'suspense-2'],
-      [18, 'exploracao-1'],
-      [26, 'combate-1'],
-      [30, 'heroismo'],
-      [35, 'exploracao-1'],
-      [49, 'coracao'],
-      [61, 'combate-2'],
-    ])
-    const silentPages = new Set([1, 9, 12, 17, 25, 29, 34, 48, 60, 71, 72, 76])
+    const expectedTrackByPage = [
+      { start: 2, end: 9, trackId: 'sociedade' },
+      { start: 10, end: 12, trackId: 'suspense-1' },
+      { start: 13, end: 17, trackId: 'suspense-2' },
+      { start: 18, end: 25, trackId: 'exploracao-1' },
+      { start: 26, end: 29, trackId: 'combate-1' },
+      { start: 30, end: 34, trackId: 'heroismo' },
+      { start: 35, end: 48, trackId: 'exploracao-1' },
+      { start: 49, end: 60, trackId: 'coracao' },
+      { start: 61, end: 71, trackId: 'combate-2' },
+    ]
 
     for (let page = 1; page <= 76; page += 1) {
       const activeTracks = activeTrackIdsForPage(volumeTwo!.cues, page)
       expect(activeTracks.size, `active tracks on page ${page}`).toBeLessThanOrEqual(1)
 
-      const expectedTrack = expectedTrackByPage.get(page)
+      const expectedTrack = expectedTrackByPage.find((segment) => page >= segment.start && page <= segment.end)?.trackId
       if (expectedTrack) {
         expect([...activeTracks], `track on page ${page}`).toEqual([expectedTrack])
-      } else if (silentPages.has(page)) {
+      } else {
         expect(activeTracks.size, `silence on page ${page}`).toBe(0)
       }
     }
