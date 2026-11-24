@@ -51,6 +51,7 @@ function parseTrack(value: unknown, index: number): AudioTrack {
     id: requiredString(value.id, `ID da faixa ${index + 1}`),
     title: requiredString(value.title, `Nome da faixa ${index + 1}`),
     src,
+    ...(value.loop === true ? { loop: true } : {}),
   }
 }
 

@@ -213,6 +213,7 @@ export class AudioController {
     for (const track of this.tracks) {
       const element = new Audio()
       element.preload = 'none'
+      element.loop = track.loop === true
       element.src = track.src
 
       const source = context.createMediaElementSource(element)

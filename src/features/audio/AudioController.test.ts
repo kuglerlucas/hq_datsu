@@ -46,6 +46,7 @@ class FakeAudioElement {
 
   readonly src: string
   preload = 'auto'
+  loop = false
   paused = true
   ended = false
   currentTime = 0
@@ -119,6 +120,21 @@ describe('AudioController', () => {
     await Promise.all([firstPage, nextPage])
     expect(element.currentTime).toBe(4)
     expect(FakeAudioContext.gains[1]?.gain.value).toBe(1)
+
+    controller.dispose()
+  })
+
+  it('loops only tracks marked with loop', async () => {
+    vi.stubGlobal('Audio', FakeAudioElement)
+    vi.stubGlobal('window', { AudioContext: FakeAudioContext, setTimeout, clearTimeout })
+
+    const controller = new AudioController([
+      { id: 'isaac', title: 'Isaac', src: '/isaac.mp3', loop: true },
+      { id: 'drekai', title: 'Drekai', src: '/drekai.mp3' },
+    ])
+    await controller.playForPage(7, cues, true)
+
+    expect(FakeAudioElement.instances.map((element) => element.loop)).toEqual([true, false])
 
     controller.dispose()
   })

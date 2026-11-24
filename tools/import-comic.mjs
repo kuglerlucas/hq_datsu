@@ -51,7 +51,12 @@ function validateManifest(value, archiveFiles) {
     trackIds.add(trackId)
     const src = safeAssetPath(track.src, id, `Arquivo da faixa ${index + 1}`)
     if (!src.toLowerCase().endsWith('.mp3')) fail(`A faixa ${index + 1} precisa estar em MP3.`)
-    return { id: trackId, title: requiredText(track.title, `Nome da faixa ${index + 1}`), src }
+    return {
+      id: trackId,
+      title: requiredText(track.title, `Nome da faixa ${index + 1}`),
+      src,
+      ...(track.loop === true ? { loop: true } : {}),
+    }
   })
 
   const seenTrackPages = new Set()

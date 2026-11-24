@@ -2,6 +2,7 @@ export type AudioTrack = {
   id: string
   title: string
   src: string
+  loop?: boolean
 }
 
 export type PageCue = {

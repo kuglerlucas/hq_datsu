@@ -141,7 +141,8 @@
         {
           "id": "drekai-runa",
           "title": "Drekai Runa",
-          "src": "content/comics/torneio-infernal-aurora-vs-drekalia-2-5/audio/drekai-runa.mp3"
+          "src": "content/comics/torneio-infernal-aurora-vs-drekalia-2-5/audio/drekai-runa.mp3",
+          "loop": true
         }
       ],
       "cues": [
