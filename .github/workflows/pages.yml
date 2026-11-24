@@ -20,7 +20,7 @@ concurrency:
 
 jobs:
   check-comic-release:
-    if: github.event_name != 'release' || github.event.release.tag_name == 'hq-torneio-v1' || github.event.release.tag_name == 'hq-torneio-v2'
+    if: github.event_name != 'release' || github.event.release.tag_name == 'hq-torneio-v1' || github.event.release.tag_name == 'hq-torneio-v2' || github.event.release.tag_name == 'hq-torneio-v2-5'
     runs-on: ubuntu-latest
     outputs:
       available: ${{ steps.release.outputs.available }}
@@ -30,7 +30,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          for tag in hq-torneio-v1 hq-torneio-v2; do
+          for tag in hq-torneio-v1 hq-torneio-v2 hq-torneio-v2-5; do
             if ! gh release view "$tag" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
               echo "available=false" >> "$GITHUB_OUTPUT"
               echo "::notice title=Release ausente::A publicação aguarda a release $tag."
@@ -58,9 +58,10 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           media_root="$RUNNER_TEMP/datsu-comic-media"
-          mkdir -p "$media_root/v1" "$media_root/v2"
+          mkdir -p "$media_root/v1" "$media_root/v2" "$media_root/v2-5"
           gh release download hq-torneio-v1 --repo "$GITHUB_REPOSITORY" --dir "$media_root/v1"
           gh release download hq-torneio-v2 --repo "$GITHUB_REPOSITORY" --dir "$media_root/v2"
+          gh release download hq-torneio-v2-5 --repo "$GITHUB_REPOSITORY" --dir "$media_root/v2-5"
 
           volume1="public/content/comics/torneio-infernal-aurora-vs-drekalia-1"
           mkdir -p "$volume1/audio"
@@ -84,6 +85,11 @@ jobs:
           cp "$media_root/v2/Heroismo.mp3" "$volume2/audio/heroismo.mp3"
           cp "$media_root/v2/Coracao.mp3" "$volume2/audio/coracao.mp3"
           cp "$media_root/v2/Combate.2.mp3" "$volume2/audio/combate-2.mp3"
+
+          volume25="public/content/comics/torneio-infernal-aurora-vs-drekalia-2-5"
+          mkdir -p "$volume25/audio"
+          cp "$media_root/v2-5/hq-2-5.pdf" "$volume25/comic.pdf"
+          cp "$media_root/v2-5/drekai-runa.mp3" "$volume25/audio/drekai-runa.mp3"
       - name: Run tests
         run: npm test
       - name: Run lint

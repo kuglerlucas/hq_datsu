@@ -128,6 +128,25 @@
         { "page": 61, "trackId": "combate-2", "action": "start", "fadeMs": 0 },
         { "page": 72, "trackId": "combate-2", "action": "stop", "fadeMs": 0 }
       ]
+    },
+    {
+      "id": "torneio-infernal-aurora-vs-drekalia-2-5",
+      "title": "Torneio Infernal: Aurora vs Drekalia",
+      "subtitle": "Volume 2.5 – Epílogo: A Runa de Drekai",
+      "description": "HQ de 17 páginas do RPG Datsu.",
+      "author": "Datsu",
+      "pageCount": 17,
+      "pdf": "content/comics/torneio-infernal-aurora-vs-drekalia-2-5/comic.pdf",
+      "tracks": [
+        {
+          "id": "drekai-runa",
+          "title": "Drekai Runa",
+          "src": "content/comics/torneio-infernal-aurora-vs-drekalia-2-5/audio/drekai-runa.mp3"
+        }
+      ],
+      "cues": [
+        { "page": 1, "trackId": "drekai-runa", "action": "start", "fadeMs": 2000 }
+      ]
     }
   ]
 }
